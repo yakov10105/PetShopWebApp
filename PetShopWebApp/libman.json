@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery@3.6.0",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "jquery-one-page-nav@3.0.0",
+      "destination": "wwwroot/lib/jquery-one-page-nav/"
+    },
+    {
+      "library": "jquery-validate@1.19.3",
+      "destination": "wwwroot/lib/validation",
+      "files": [
+        "jquery.validate.min.js"
+      ]
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.12",
+      "destination": "wwwroot/lib/validation/jquery-validation-unobtrusive/"
+    }
+  ]
+}

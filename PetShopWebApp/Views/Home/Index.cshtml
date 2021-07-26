@@ -1,0 +1,21 @@
+﻿@model List<Animal>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/HomeStyle/HomeStyleSheet.css" />
+ <h1>Most Popular Animals Today :</h1>
+<div class="home">
+    @foreach (var an in Model)
+    {
+        <div class="animal">
+            @{
+                await Html.RenderPartialAsync("AnimalCatalogPartial", an);
+            }
+            <div>
+                <h3>Number of Comments : @an.Comments.Count()</h3>
+            </div>
+        </div>
+    }
+</div>
+

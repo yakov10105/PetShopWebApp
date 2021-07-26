@@ -1,0 +1,46 @@
+﻿@model Animal
+@{
+    ViewData["Title"] = "AnimalDes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/CatalogStyle/AnimalDesStyleSheet.css" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="~/lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="~/scripts/Catalog/Catalog.js"></script>
+
+<div id="contain">
+    <div id="pic">
+        <img id="anim-img" src="@Model.PictureName" alt="">
+    </div>
+    <div id="name">
+        <h1>@Model.Name</h1>
+    </div>
+    <div id="information">
+        <h2>Age: @Model.Age</h2>
+        <p>
+            <h3>Description: </h3>
+            @Model.Description
+        </p>
+    </div>
+
+    <div class="container">
+        <h1>Comments</h1>
+        <div class="row">
+            <div class="col-sm-5 col-md-6 col-12 pb-4">
+                @foreach (var com in Model.Comments)
+                {
+                    <div class="comment mt-4 text-justify float-left">
+                        <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">
+                        <h4>@com.WriterName</h4> <span>-@com.Date.ToString("dd-MM-yyyy(hh:mm)")</span> <br>
+                        <p>@com.CommentInfo</p>
+                    </div>
+                }
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4" id="add-comment">
+                <partial name="CommentsPartial" model="new Comment { AnimalId = Model.AnimalId }" />
+            </div>
+        </div>
+    </div>
+</div>
+

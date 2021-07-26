@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/css/LayoutStyleSheet.css" />
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="~/scripts/Shared/Layout.js"></script>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    @*Header*@
+    <div id="head">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="single-page-nav sticky-wrapper" id="tmNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a asp-controller="Home" asp-action="Index">Homepage</a></li>
+                        <li><a asp-controller="Catalog" asp-action="Index">Catalog</a></li>
+                        <li><a asp-controller="Admin" asp-action="Index">Administration</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <div id="body-render">
+        @RenderBody()
+    </div>
+
+
+    @*Footer*@
+    <div id="slider">
+        <ul class="slides">
+            <li class="slide"><img src="~/Assets/final/combine_images.jpg"></li>
+            <li class="slide"><img src="~/Assets/final/combine_images (1).jpg"></li>
+            <li class="slide"><img src="~/Assets/final/combine_images (2).jpg"></li>
+            <li class="slide"><img src="~/Assets/final/combine_images (3).jpg"></li>
+            <li class="slide"><img src="~/Assets/final/combine_images.jpg"></li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PetShop.Backend.Lib.Data\PetShop.Backend.Lib.Data.csproj" />
+    <ProjectReference Include="..\PetShop.Shared.Models\PetShop.Shared.Models.csproj" />
+  </ItemGroup>
+
+</Project>

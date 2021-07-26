@@ -1,0 +1,41 @@
+﻿@model Animal
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<script src="~/lib/jquery/jquery.js" ></script>
+<script src="~/lib/validation/jquery.validate.min.js" ></script>
+<script src="~/lib/validation/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" ></script>
+<link rel="stylesheet" href="~/css/AdminStyle/AdminAddStyleSheet.css" />
+
+<div id="form-control">
+    <form asp-controller="Admin" asp-action="Add" method="post" enctype="multipart/form-data">
+        @Html.LabelFor(a => a.CategoryId)
+        @Html.DropDownListFor(a => a.CategoryId, new List<SelectListItem>(ViewBag.Categories))
+        @Html.ValidationMessageFor(a => a.AnimalId, "", new { @class = "error" })
+
+        @Html.LabelFor(a => a.Name)
+        @Html.EditorFor(a => a.Name)
+        @Html.ValidationMessageFor(a => a.Name, "", new { @class = "error" })
+
+        @Html.LabelFor(a => a.Age)
+        @Html.EditorFor(a => a.Age)
+        @Html.ValidationMessageFor(a => a.Age, "", new { @class = "error" })
+
+        @Html.LabelFor(a => a.PictureFile)
+        @Html.EditorFor(a => a.PictureFile)
+
+        @Html.LabelFor(a => a.PictureName)
+        @Html.EditorFor(a => a.PictureName)
+        @Html.ValidationMessageFor(a => a.PictureName, "", new { @class = "error" })
+
+        @Html.LabelFor(a => a.Description)
+        @Html.TextAreaFor(a => a.Description, new { @placeholder = "Description...." })
+        @Html.ValidationMessageFor(a => a.Description, "", new { @class = "error" })
+
+        <button type="submit" id="btn-sbmt">Add Animal</button>
+    </form>
+</div>
+
+

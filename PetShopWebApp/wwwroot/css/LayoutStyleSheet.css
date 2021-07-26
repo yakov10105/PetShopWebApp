@@ -1,0 +1,172 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+#head {
+    height:180px;
+    display: block;
+    position:relative;
+    z-index:2;
+}
+#body-render{
+    min-height:900px;
+    display:block; 
+}
+
+#slider {
+    position:static;
+    bottom: 0px;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: block;
+    bottom:0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#slider .slides {
+    display: block;
+    width: 7200px;
+    height: 250px;
+    margin: 0;
+    padding: 0;
+}
+#slider .slide {
+    float: left;
+    list-style-type: none;
+    width: 1440px;
+    height: 250px;
+}
+
+
+a:hover {
+    text-decoration: none;
+}
+.single-page-nav {
+    text-align: center;
+}
+.navbar-toggle {
+    height: 50px;
+    width: 50px;
+    visibility: collapse;
+    margin:0;
+}
+.icon-bar {
+    display: inline-block;
+    height: 5px;
+    width: 35px;
+    background-color: black;
+    margin-left: auto;
+    margin-right: auto;
+}
+.navbar-inverse {
+    height:120px;
+    background-color: darkslategrey;
+    border-color: darkslategrey;
+    position: fixed;
+    width: 100%;
+}
+.navbar-nav > li {
+    display: inline-block;
+    padding: 10px;
+}
+.navbar-inverse .navbar-nav > li > a {
+    background: #383E4C none repeat scroll 0 0;
+    border: 1px solid #646d7c;
+    color: #fff;
+    font-size: 20px;
+    padding: 15px 25px;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+}
+.navbar-inverse .navbar-nav > li > a.current,
+.navbar-inverse .navbar-nav > li > a:hover {
+        background: #49505F;
+    }
+.navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+    position:relative;
+    top:0px;
+    margin:0;
+}
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+@media only screen and (min-width:600px) and (max-width:991px) {
+    .navbar-nav > li {
+        padding: 6px;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar-inverse .navbar-nav > li > a.current,
+    .navbar-inverse .navbar-nav > li > a:hover {
+        background: azure;
+    }
+
+    .navbar-nav > li {
+        display: block;
+    }
+
+    .navbar-inverse {
+        background: none;
+        border: none;
+    }
+
+    .navbar-toggle {
+        visibility: visible;
+    }
+
+    .navbar .navbar-nav {
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        margin-left: -35px;
+        text-align: center;
+    }
+
+    .navbar-nav > li {
+        width: 100%;
+        height: 50px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 0px 0px;
+        line-height: 50px;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        background: none;
+        border: none;
+        width: 100%;
+        color: black;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        font-size: 16px;
+    }
+
+    .container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .single-page-nav {
+        background-color: gainsboro;
+        max-height: 0px;
+        transition: max-height 0.8s;
+        overflow:hidden;
+    }
+
+    .single-page-nav.show {
+        width: 100%;
+        max-height: 250px;
+        overflow: auto;
+    }
+}

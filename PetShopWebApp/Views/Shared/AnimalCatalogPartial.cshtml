@@ -1,0 +1,11 @@
+﻿@model Animal
+
+<link rel="stylesheet" href="~/css/CatalogPartialStyleSheet.css" />
+<div class="partial-catalog">
+    <div>
+        <img class="modelImg" src="@Model.PictureName" />
+    </div>
+    <div class="info-name">
+        <a id="btn-name" asp-controller="Catalog" asp-action="AnimalDes" asp-route-animalId="@Model.AnimalId">@Model.Name</a>
+    </div>
+</div>

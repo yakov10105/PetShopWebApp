@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/CatalogStyle/CatalogStyleSheet.css" />
+<script src="~/lib/jquery/jquery.js"></script>
+<script type="text/javascript" src="~/scripts/Catalog/Catalog.js"></script>
+<div class="catalog">
+    <div class="catalog-info">
+        <div id="drop-down-category">
+            <select id="cat">
+                <option disabled selected>Select Category</option>
+                @foreach (var cat in ViewBag.Categories)
+                {
+                    <option value="@cat.CategoryId">@cat.CategoryName</option>
+                }
+            </select>
+            <a id="btn-submit" data-url-prefix="@Url.Action("Category")">Submit</a>
+        </div>
+        <div id="all-animals">
+            @foreach (var an in ViewBag.Animals)
+            {
+                <partial name="AnimalCatalogPartial" for="@an" />
+            }
+        </div>
+    </div>
+</div>
+
+

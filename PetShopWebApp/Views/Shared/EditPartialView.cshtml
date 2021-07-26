@@ -1,0 +1,33 @@
+﻿@model Animal
+
+<div id="form-control">
+    <form method="post" asp-controller="Admin" asp-action="Edit" asp-route-newAnimal="@Model">
+        <div>
+            @Html.LabelFor(a => a.Name)
+            @Html.EditorFor(a => a.Name)
+            <button type="button" class="dont" data-txt="name">Dont Change</button>
+            @Html.ValidationMessageFor(a => a.Name, "", new { @class = "error" })
+        </div>
+        <div>
+            @Html.LabelFor(a => a.Age)
+            @Html.EditorFor(a => a.Age)
+            <button type="button" class="dont" data-txt="age">Dont Change</button>
+            @Html.ValidationMessageFor(a => a.Age, "", new { @class = "error" })
+        </div>
+        <div>
+            @Html.LabelFor(a => a.PictureName)
+            @Html.EditorFor(a => a.PictureName)
+            <button type="button" class="dont" data-txt="img-name">Dont Change</button>
+            @Html.ValidationMessageFor(a => a.PictureName, "", new { @class = "error" })
+        </div>
+        <div>
+            @Html.LabelFor(a => a.Description)
+            @Html.EditorFor(a => a.Description)
+            <button type="button" class="dont" data-txt="desc">Dont Change</button>
+            @Html.ValidationMessageFor(a => a.Description, "", new { @class = "error" })
+        </div>
+        <div>
+            <input id="sbmt" type="submit" value="Save Changes" />
+        </div>
+    </form>
+</div>

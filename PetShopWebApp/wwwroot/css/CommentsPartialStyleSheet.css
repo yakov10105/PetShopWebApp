@@ -1,0 +1,59 @@
+﻿*{
+    margin:0px;
+    padding:0px;
+}
+#algin-form{
+    min-width:400px;
+}
+#post {
+    margin: 10px;
+    padding: 6px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #ecb21f;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 13px;
+    width: 100%;
+}
+input{
+    color:white;
+    font-weight:bold;
+    min-width:100%;
+}
+.wrong{
+    color:red;
+    font-weight:bold;
+}
+#label{
+    color:white;
+}
+.label {
+    color: white;
+    font-weight: bold
+}
+textarea{
+    color:white;
+    min-width:100%;
+}
+.form-group p a {
+    color: white
+}
+.form-group input,
+.form-group textarea {
+    background-color: black;
+    border: 1px solid rgba(16, 46, 46, 1);
+    border-radius: 12px
+}
+form {
+    border: 1px solid rgba(16, 46, 46, 1);
+    background-color: rgba(16, 46, 46, 0.973);
+    border-radius: 5px;
+    padding: 20px
+}
+textarea{
+    resize:none;
+}

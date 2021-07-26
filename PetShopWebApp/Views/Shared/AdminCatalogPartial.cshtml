@@ -1,0 +1,16 @@
+﻿@model Animal
+
+<link rel="stylesheet" href="~/css/AdminCatalogStyleSheet.css" />
+<div id="unit-component">
+    @{ 
+        await Html.RenderPartialAsync("AnimalCatalogPartial",Model);
+    }
+    <div id="admin-addition">
+        <a id="btn-edit" asp-controller="Admin" asp-action="Edit" asp-route-animalId="@Model.AnimalId">
+            <img class="icon" src="~/Assets/edit_128px.png"/>
+        </a>
+        <a id="btn-delete" asp-controller="Admin" asp-action="Delete" asp-route-animalId="@Model.AnimalId">
+            <img class="icon" src="~/Assets/icons8_remove_200px_1.png"/>
+        </a>
+    </div>
+</div>

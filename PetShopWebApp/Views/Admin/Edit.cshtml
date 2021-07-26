@@ -1,0 +1,42 @@
+﻿@model Animal
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/validation/jquery.validate.min.js"></script>
+<script src="~/lib/validation/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<link rel="stylesheet" href="~/css/AdminStyle/AdminEditStyleSheet.css" />
+
+
+<div id="form-control">
+    <form method="post" asp-controller="Admin" asp-action="Edit" enctype="multipart/form-data">
+
+        @Html.HiddenFor(a => a.AnimalId)
+        @Html.HiddenFor(a => a.CategoryId)
+
+        @Html.LabelFor(a => a.Name)
+        @Html.EditorFor(a => a.Name)
+        @Html.ValidationMessageFor(a => a.Name, "", new { @class = "error" })
+
+        @Html.LabelFor(a => a.Age)
+        @Html.EditorFor(a => a.Age)
+        @Html.ValidationMessageFor(a => a.Age, "", new { @class = "error" })
+
+        @Html.LabelFor(a => a.PictureFile)
+        @Html.EditorFor(a => a.PictureFile)
+
+        @Html.LabelFor(a => a.PictureName)
+        @Html.EditorFor(a => a.PictureName)
+        @Html.ValidationMessageFor(a => a.PictureName, "", new { @class = "error" })
+
+
+        @Html.LabelFor(a => a.Description)
+        @Html.EditorFor(a => a.Description)
+        @Html.ValidationMessageFor(a => a.Description, "", new { @class = "error" })
+
+        <button id="sbmt" type="submit">Save Changes</button>
+
+    </form>
+</div>
+
