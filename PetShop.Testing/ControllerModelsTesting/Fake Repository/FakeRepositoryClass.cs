@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace PetShop.Testing.ControllersTesting
 {
+
+    /// <summary>
+    /// Implementation of the IPetShopRepository interface. Used in the test class where required.
+    /// </summary>
     public class FakeRepositoryClass : IPetShopRepository
     {
         private readonly List<Animal> _animals;
@@ -21,21 +25,6 @@ namespace PetShop.Testing.ControllersTesting
 
 
 
-        public bool AddAnimal(Animal animal)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool AddCategory(Category category)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool AddComment(Comment comment)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Animal> GetAllAnimals()
         {
             return _animals;
@@ -46,29 +35,39 @@ namespace PetShop.Testing.ControllersTesting
             return _categories;
         }
 
+        #region Not Implemented
+        public bool AddAnimal(Animal animal)
+        {
+            throw new NotImplementedException();
+        }
+        public bool AddCategory(Category category)
+        {
+            throw new NotImplementedException();
+        }
+        public bool AddComment(Comment comment)
+        {
+            throw new NotImplementedException();
+        }
         public IEnumerable<Comment> GetAllComments()
         {
             throw new NotImplementedException();
         }
-
         public bool RemoveAnimal(int animalId)
         {
             throw new NotImplementedException();
         }
-
         public bool RemoveCategory(int categoryId)
         {
             throw new NotImplementedException();
         }
-
         public bool RemoveComment(int commentId)
         {
             throw new NotImplementedException();
         }
-
         public bool UpdateAnimal(Animal animal)
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

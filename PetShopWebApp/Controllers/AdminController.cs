@@ -20,14 +20,21 @@ namespace PetShopWebApp.Controllers
             _env = env;
             _categories = _repo.GetAllCategories();
         }
-        //return view with all the animals
+        /// <summary>
+        /// returns view with all the animals
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             ViewBag.Categories = _categories;
             var animals = _repo.GetAllAnimals();
             return View(animals);
         }
-        //returns view with all the animal of the chosen category
+        /// <summary>
+        /// returns view with all the animal of the chosen category
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <returns></returns>
         public IActionResult Category(int categoryId)
         {
             var relevantAnimals = _categories.
@@ -37,7 +44,11 @@ namespace PetShopWebApp.Controllers
             return View("Index", relevantAnimals);
         }
 
-        //returns form to edit exist animal
+        /// <summary>
+        /// returns form to edit exist animal
+        /// </summary>
+        /// <param name="animalId"></param>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Edit(int animalId)
         {
@@ -46,7 +57,11 @@ namespace PetShopWebApp.Controllers
             return View(animal);
         }
 
-        //post method to edit action , checks the model validity and updates it in database
+        /// <summary>
+        /// post method to edit action , checks the model validity and updates it in database
+        /// </summary>
+        /// <param name="newAnimal"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Edit(Animal newAnimal)
         {
@@ -60,14 +75,21 @@ namespace PetShopWebApp.Controllers
         }
 
 
-        //Delete the animal with the given id.
+        /// <summary>
+        /// Delete the animal with the given id.
+        /// </summary>
+        /// <param name="animalId"></param>
+        /// <returns></returns>
         public IActionResult Delete(int animalId)
         {
             _repo.RemoveAnimal(animalId);
             return RedirectToAction("Index");
         }
-        
-        //returns form to add new animal to the store
+
+        /// <summary>
+        /// returns form to add new animal to the store
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Add()
         {
@@ -81,7 +103,11 @@ namespace PetShopWebApp.Controllers
             return View();
         }
 
-        //post method to the add action , checks the model validity and adds it to the database
+        /// <summary>
+        /// post method to the add action , checks the model validity and adds it to the database
+        /// </summary>
+        /// <param name="animal"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Add(Animal animal)
         {
@@ -95,7 +121,10 @@ namespace PetShopWebApp.Controllers
                 return RedirectToAction("Add");
         }
 
-        //Checks if the user uploaded image , adds it to the img folder and gives the animal its picture name
+        /// <summary>
+        /// Checks if the user uploaded image , adds it to the img folder and gives the animal its picture name
+        /// </summary>
+        /// <param name="animal"></param>
         public void CheckImageFile(Animal animal)
         {
             if (animal.PictureFile != null)

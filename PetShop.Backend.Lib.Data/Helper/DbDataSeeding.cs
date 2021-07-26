@@ -10,6 +10,10 @@ namespace PetShop.Backend.Lib.Data.Helper
 {
     public static class DbDataSeeding
     {
+        /// <summary>
+        /// Model Builder Class extention for seeding entities in the database
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         public static void Seed(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(

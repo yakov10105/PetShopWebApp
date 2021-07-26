@@ -26,6 +26,7 @@ namespace PetShopWebApp
             services.AddTransient<IPetShopRepository, PetShopRepository>();
 
             var connectionString = _iConfig.GetConnectionString("DefaultConnection");
+            //connectiong to the database using lazy loading design pattern
             services.AddDbContext<PetShopDbContext>(options => options.UseLazyLoadingProxies().UseSqlServer(connectionString));
 
             services.AddControllersWithViews();

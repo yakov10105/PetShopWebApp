@@ -17,6 +17,10 @@ namespace PetShop.Backend.Lib.Data
         public PetShopDbContext(DbContextOptions<PetShopDbContext> options) : base(options)
         {
         }
+        /// <summary>
+        /// Seed data to the database when the project start to run
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Seed();

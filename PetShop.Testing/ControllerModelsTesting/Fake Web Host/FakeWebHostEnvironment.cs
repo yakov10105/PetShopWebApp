@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace PetShop.Testing.ControllerModelsTesting.Fake_Web_Host
 {
+    /// <summary>
+    /// Class that implements the IWebHostEnvironment interface and used in the test class where IWebHostEnvironment interface required.
+    /// </summary>
     public class FakeWebHostEnvironment : IWebHostEnvironment
     {
         public string WebRootPath { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

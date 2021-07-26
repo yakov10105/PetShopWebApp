@@ -1,5 +1,6 @@
 ﻿$(function () {
     //Navigation Bar
+
     $('.navbar-toggle').click(function () {
         $('.single-page-nav').toggleClass('show', 1000);
     });

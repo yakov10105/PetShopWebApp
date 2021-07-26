@@ -16,7 +16,10 @@ namespace PetShopWebApp.Controllers
         {
             _repo = repo;
         }
-
+        /// <summary>
+        /// Returns view with the two most commented animals in the database
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             var ansToShow = _repo.GetAllAnimals()

@@ -19,14 +19,21 @@ namespace PetShopWebApp.Controllers
             _categories = _repo.GetAllCategories();
         }
 
-        //returns view with All animals
+        /// <summary>
+        /// returns view with All the animals from the database
+        /// </summary>
+        /// <returns></returns>
         public IActionResult Index()
         {
             ViewBag.Categories = _categories;
             ViewBag.Animals = _repo.GetAllAnimals();
             return View();
         }
-        //returns view aimals of the selcted category
+        /// <summary>
+        /// returns view all the animals of the selcted category
+        /// </summary>
+        /// <param name="categoryId"></param>
+        /// <returns></returns>
         public IActionResult Category(int categoryId)
         {
             var relevantAnimals = _categories.
@@ -36,7 +43,11 @@ namespace PetShopWebApp.Controllers
             ViewBag.Animals = relevantAnimals;
             return View("Index");
         }
-        //returns page with details about the selcted animal 
+        /// <summary>
+        /// returns page with details about the selcted animal 
+        /// </summary>
+        /// <param name="animalId"></param>
+        /// <returns></returns>
         public IActionResult AnimalDes(int animalId)
         {
             var animal = _repo.GetAllAnimals().FirstOrDefault(a => a.AnimalId == animalId);
@@ -44,7 +55,11 @@ namespace PetShopWebApp.Controllers
             return View(animal);
         }
 
-        //add new comment and returns the updated page of the animal
+        /// <summary>
+        /// Checks the comment validity and adds it to the database
+        /// </summary>
+        /// <param name="comment"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult AddComment(Comment comment)
         {
